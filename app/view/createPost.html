@@ -1,0 +1,49 @@
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  #criar {
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+  #criar h1 {
+    font-size: 40px;
+    font: arial;
+    color: #2874a6;
+  }
+
+  label {
+    font-size: 18px;
+    font: arial;
+    color: #384149;
+    margin-bottom: 12px;
+  }
+
+  input {
+    margin-bottom: 30px;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+</style>
+
+<div id="criar">
+  <h1>Criar Publicação</h1>
+</div>
+
+<form method="post" action="?pagina=perfil&metodo=insert">
+  <div class="form-group">
+    <label for="FormControlInput1">Titulo: </label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="titulo">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conteúdo: </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="conteudo"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" value="criar">Criar</button>
+</form>

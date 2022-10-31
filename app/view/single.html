@@ -1,0 +1,113 @@
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  header h2 {
+    font-size: 30px;
+    font: arial;
+    color: #2874A6;
+    margin-bottom: 45px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font: arial;
+    color: rgb(41, 38, 38);
+  }
+
+  article p {
+    font-size: 18px;
+    font: arial;
+    color: #384149;
+    margin-bottom: 20px;
+  }
+
+  article h3 {
+    margin-top: 40px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font: arial;
+    color: #1c1e1e;
+  }
+
+  label {
+    font-size: 18px;
+    font: arial;
+    color: #384149;
+    margin-bottom: 12px;
+  }
+
+  input {
+    margin-bottom: 30px;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+
+  .form-group p {
+    font-size: 23px;
+    font: arial;
+    color: #2874A6;
+  }
+</style>
+
+
+<section>
+
+  <article>
+
+    <header>
+            <!--Para abrir a pagina da postagem-->
+                      <!--pegando o titulo da postagem de maneira dinamica direto do DB-->
+      <h2>{{titulo}}</h2>
+
+    </header>
+    <!--duas chaves para transmitir os dados da controller para a view, sem a tag <?php>-->
+    <p>{{conteudo}}</p>
+
+    <br>
+    <hr>
+    <br>
+
+    <form method="post" action="http://localhost/site-php-mvc/?pagina=post&metodo=addComent">
+      <div class="form-group">
+        <p>Adicionar comentário: </p>
+        <label for="FormControlInput1">Nome: </label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="nome">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Comentário: </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
+      </div>
+
+      <!--Para ter a informação do id da postagem que o usuario comentou-->
+      <input type="hidden" name="id" value="{{id}}">
+      
+      <button type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
+    </form>
+
+    <br>
+
+    <h2>Comentários: </h2>
+
+    {% if comentarios == false %}
+
+        <p>Não existe nenhum comentario nesse post</p>
+
+    {% else %}
+      {% for coment in comentarios %}
+      
+      <h3>{{coment.nome}}</h3>
+      <p>{{coment.mensagem}}</p>
+
+      {% endfor %}
+    {% endif %}
+
+
+  </article>
+
+</section>

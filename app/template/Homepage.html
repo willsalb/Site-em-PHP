@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- CSS Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<body>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #7B9AAF;
+    }
+
+    #container{
+      width: 1000px;
+      margin: 0 auto;
+      background-color: #FFF;
+      border-left: 2px solid #ccc;
+      border-right: 2px solid #ccc;
+    }
+    #navbar {
+      display: flex;
+      padding: 15px 30px;
+      text-align: start;
+      font-size: 25px;
+      font: arial;
+      border-bottom: 5px solid #ccc;
+      justify-content: space-around;
+    }
+    #navbar a{
+      color: #000;
+      text-decoration: none;
+    }
+    #navbar a:hover {
+      text-decoration: underline;
+      color: #424949;
+    }
+
+    #content {
+      background-color: #fff;
+      padding: 15px 30px;
+    }
+    #content article {
+      margin-bottom: 30px;
+      margin-top: 15px;
+    }
+    #content h1 {
+      font-size: 40px;
+      font: arial;
+      color: #222929;
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+
+    article h2 {
+      margin-top: 50px;
+      margin-bottom: 12px;
+    }
+    article h2 a{
+      font-size: 25px;
+      font: arial;
+      color: #2874A6;
+      text-decoration: none;
+    }
+    article h2 a:hover {
+      text-decoration: underline;
+    }
+    article p {
+      font-size: 17px;
+      font: arial;
+      color: #384149;
+      padding-left: 8px;
+    }
+  </style>
+
+  <div id="container">
+
+    <div id="navbar">
+      <header>
+        <nav>
+          <a href="http://localhost/site-php-mvc/">Home</a> |
+          <a href="http://localhost/site-php-mvc/?pagina=perfil&metodo=index">Perfil</a> |
+          <a href="http://localhost/site-php-mvc/?pagina=sobre">Sobre</a> 
+        </nav>
+      </header>
+    </div>
+
+    <div id="content">
+      
+      <!--Para pegar o conteudo com o php e substituir pela pagina home/postagem/sobre-->
+      {{area_dinamica}}
+
+
+      <!-- <section>
+        <h1>Feed</h1>
+
+        <article>
+
+          <header>
+                  Para abrir a pagina da postagem
+            <h2><a href="#">Titulo da postagem</a></h2>
+          </header>
+
+          <p>Conteudo da postagem</p>
+
+        </article>
+
+        <article>
+
+          <header>
+                  Para abrir a pagina da postagem
+            <h2><a href="#">Titulo da postagem</a></h2>
+          </header>
+
+          <p>Conteudo da postagem</p>
+
+        </article>
+      </section>
+    -->
+    </div>
+  </div>
+</body>
+</html>

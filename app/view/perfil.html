@@ -1,0 +1,82 @@
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 40px;
+    font: arial;
+    color: #2874A6;
+  }
+
+  a {
+    font-size: 25px;
+    font: arial;
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #424949;
+  }
+
+  .table {
+    margin-top: 25px;
+  }
+
+  .table tr th {
+    font-size: 18px;
+    font: arial;
+  }
+
+  .table tbody tr {
+    font-size: 15px;
+    font: arial;
+  }
+  .table tbody tr th {
+    font-size: 15px;
+    font: arial;
+  }
+
+  .table td a {
+    font-size: 15px;
+    font: arial;
+  }
+</style>
+
+<h2>Meu Perfil</h2>
+
+<a href="http://localhost/site-php-mvc/?pagina=perfil&metodo=create">Criar Postagem</a>
+
+<hr style="margin-top: 20px;">
+
+<table class="table table-striped">
+  <thead class="table">
+
+    <!--Recria essa estrutura a cada vez que encontrar um resultado no DB-->
+
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Alterar</th>
+      <th scope="col">Deletar</th>
+    </tr>
+
+    
+  </thead>
+  <tbody>
+    <tr>
+      {% for post in postagens %}
+
+      <th scope="row">{{post.id}}</th>
+      <td>{{post.titulo}}</td>
+      <td><a href="http://localhost/site-php-mvc/?pagina=perfil&metodo=change&id={{post.id}}">Alterar</a></td>
+      <td><a href="http://localhost/site-php-mvc/?pagina=perfil&metodo=delete&id={{post.id}}">Deletar</a></td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
